@@ -52,6 +52,7 @@ result = ll.has_loop_marking(sentinel)
 
 
 #implement working with loops. Retracing
+"""
 sentinel = ll.Cell(None)
 list_of_values = [1, 2, 3, 4, 5]
 for num in list_of_values:
@@ -61,5 +62,16 @@ result = ll.has_loop_retracing(make_loop)
 result2 = ll.has_loop_retracing(sentinel)
 print(result2)
 ll.iterate(sentinel)
+"""
 
 
+#implement working with loop. Reverse
+sentinel = ll.Cell(None)
+list_of_values = [1, 2, 3, 4, 5]
+for num in list_of_values:
+    ll.add_to_end(sentinel, ll.Cell(num))
+has_not_loop = ll.has_loop_reversing(sentinel)
+print(has_not_loop)
+make_loop = ll.make_circle(sentinel)
+has_loop = ll.has_loop_reversing(make_loop)
+print(has_loop)

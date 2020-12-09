@@ -24,6 +24,12 @@ def iterate(top):
             break
 
 
+def iterate_reverse(top):
+    while top.next is not None:
+        print(top.value)
+        top = top.next
+
+
 def add_to_end(top, new_cell):
     while top.next is not None:
         top = top.next
@@ -86,3 +92,25 @@ def has_loop_retracing(top: Cell):
             tracer = tracer.next
         sentinel = sentinel.next
     return has_loop
+
+
+def reverse_list(top: Cell):
+    prev_cell = None
+    curr_cell = top
+    while curr_cell is not None:
+        next_cell = curr_cell.next
+        curr_cell.next = prev_cell
+        prev_cell = curr_cell
+        curr_cell = next_cell
+    return prev_cell
+
+
+def has_loop_reversing(top: Cell):
+    if top.next is None:
+        return False
+    new_sentinel = reverse_list(top)
+    reverse_list(new_sentinel)
+    if new_sentinel == top:
+        return True
+    else:
+        return False
