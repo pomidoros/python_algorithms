@@ -34,15 +34,6 @@ class List:
             top = top.next
             top.ind += 1
 
-    def __str__(self):
-        string = 'Start << ['
-        top = self.pointer
-        while top.next.next is not None:
-            top = top.next
-            string += str(top.value) + ', '
-        string += str(top.next.value) + '] << End'
-        return string
-
     def find_node(self, value):
         top = self.pointer
         while top.next is not None:
@@ -69,6 +60,23 @@ class List:
             top = top.next
         top.next.next, top.next = None, top.next.next
 
+    def copy_list(self):
+        new_sentinel = List()
+        top = self.pointer.next
+        while top is not None:
+            new_sentinel.add_node(top.value)
+            top = top.next
+        return new_sentinel
+
+    def __str__(self):
+        string = 'Start << ['
+        top = self.pointer
+        while top.next.next is not None:
+            top = top.next
+            string += str(top.value) + ', '
+        string += str(top.next.value) + '] << End'
+        return string
+    
 
 if __name__ == "main":
     new = List()
