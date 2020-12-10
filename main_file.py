@@ -66,6 +66,7 @@ ll.iterate(sentinel)
 
 
 #implement working with loop. Reverse
+"""
 sentinel = ll.Cell(None)
 list_of_values = [1, 2, 3, 4, 5]
 for num in list_of_values:
@@ -75,3 +76,13 @@ print(has_not_loop)
 make_loop = ll.make_circle(sentinel)
 has_loop = ll.has_loop_reversing(make_loop)
 print(has_loop)
+"""
+
+#implemet working with loop. Floid Algorithm
+sentinel = ll.Cell(None)
+list_of_values = [1, 2, 3, 4, 5, 6, 7]
+for num in list_of_values:
+    ll.add_to_end(sentinel, ll.Cell(num))
+check_loop = ll.floid_algorithm(sentinel)
+print(check_loop)
+ll.iterate(sentinel)

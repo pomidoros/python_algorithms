@@ -114,3 +114,20 @@ def has_loop_reversing(top: Cell):
         return True
     else:
         return False
+
+
+def floid_algorithm(top: Cell):
+    rabbit = top
+    turtle = top
+    while rabbit.next.next != turtle.next:
+        rabbit = rabbit.next.next
+        turtle = turtle.next
+        if rabbit.next is None or rabbit.next.next is None:
+            return "Not loop"
+    rabbit = top
+    turtle = turtle.next
+    while rabbit.next != turtle.next:
+        rabbit = rabbit.next
+        turtle = turtle.next
+    turtle.next = None
+    return "Is loop"
