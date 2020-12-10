@@ -86,3 +86,28 @@ for num in list_of_values:
 check_loop = ll.floid_algorithm(sentinel)
 print(check_loop)
 ll.iterate(sentinel)
+
+
+def menu_of_lists():
+    while True:
+        print("""Which subpackage are you what to test?
+        1. Release of the binding lists by function and exchanging of cells
+        2. Release of the binding lists by methods
+        3. Release of the working with loops
+        4. Release of the binding bidirectional binding lists 
+        5. Release of the multi-directional binding lists
+        0. Exit
+        """)
+        user_choice = int(input())
+        if user_choice == 1:
+            pass
+        elif user_choice == 2:
+            pass
+        elif user_choice == 3:
+            pass
+        elif user_choice == 4:
+            pass
+        elif user_choice == 5:
+            pass
+        else:
+            break

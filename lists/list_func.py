@@ -5,9 +5,12 @@ class Cell:
 
 
 def iterate(top: Cell):
+    string = '['
     while top.next is not None:
         top = top.next
-        print(top.value)
+        string += str(top.value) + ', '
+    string += ']'
+    print(string)
 
 
 def add_to_end(top: Cell, new_cell: Cell):
