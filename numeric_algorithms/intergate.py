@@ -15,6 +15,7 @@ def draw_figure(f, x1, x2, rule):
     plt.fill_between(x_vector, y_vector, axis_array)
 
 
+# here realised integration by rectangular algorithm
 def use_rectangle_rule(func, xmin, xmax, num_intervals):
     dx = (xmax - xmin) / num_intervals
     x = xmin
@@ -26,6 +27,7 @@ def use_rectangle_rule(func, xmin, xmax, num_intervals):
     print(f"Total area equal {round(area, 2)}")
 
 
+# here realised integration by trapezoid algorithm
 def use_trapezoid_rule(func, xmin, xmax, num_intervals):
     dx = (xmax - xmin) / num_intervals
     x = xmin
