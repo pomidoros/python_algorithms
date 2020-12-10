@@ -74,7 +74,6 @@ def integrate_adapt(func, xmin, xmax, num_intervals, slice_error):
 def main(u_input):
     #curve for integrate
     f = lambda x: math.sin(2 * x) + x + 1
-
     # array of X-axis points
     main_x = np.linspace(0, 5, 100)
 
@@ -84,10 +83,10 @@ def main(u_input):
     plt.plot(main_x, y_array)
 
     #first coordinate
-    x_coord_min = 0
+    x_coord_min = -5
 
     #second coordinate
-    x_coord_max = 10
+    x_coord_max = 5
 
     #amount of intervals which devide the area under curve
     # not matter for intergate adapt, but matter for rectangular and
