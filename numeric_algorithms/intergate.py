@@ -83,7 +83,7 @@ def main(u_input):
     plt.plot(main_x, y_array)
 
     #first coordinate
-    x_coord_min = -5
+    x_coord_min = 0
 
     #second coordinate
     x_coord_max = 5
@@ -91,10 +91,10 @@ def main(u_input):
     #amount of intervals which devide the area under curve
     # not matter for intergate adapt, but matter for rectangular and
     # trapezoid methods
-    n_intervals = 3
+    n_intervals = 1
 
     # error of integrate adapt method
-    error_area = 0.001
+    error_area = 0.0000000000001
 
     if u_input == 1:
         use_rectangle_rule(f, x_coord_min, x_coord_max, n_intervals)
