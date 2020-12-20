@@ -94,7 +94,7 @@ def main(u_input):
     n_intervals = 1
 
     # error of integrate adapt method
-    error_area = 0.0000000000001
+    error_area = 0.0001
 
     if u_input == 1:
         use_rectangle_rule(f, x_coord_min, x_coord_max, n_intervals)
