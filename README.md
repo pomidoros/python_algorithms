@@ -1,7 +1,7 @@
 ## Hello
 ---
-[![NPM Version](https://img.shields.io/badge/python-3.6-blue)]()
-[![GULP Version](https://img.shields.io/badge/pip-20.3.3-red)]()
+[![Python Version](https://img.shields.io/badge/python-3.6-blue)]()
+[![Pip Version](https://img.shields.io/badge/pip-20.3.3-red)]()
 ---
 
 To install this package you should execute command line:
