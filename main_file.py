@@ -1,14 +1,16 @@
-#unidirectional list methods package
+# unidirectional list methods package
 from lists import list_methods as lm
-#bidirectional list methods package
+# bidirectional list methods package
 from lists import bidirectional_list_methods as bl
-#list functions
+# list functions
 from lists import list_func as lf
-#list with loop functions
+# list with loop functions
 from lists import lists_with_loop as ll
+# list's visualization
+from lists import interface_for_lists as inter
 
 
-#example of onedirectional binding lists' methods
+# example of onedirectional binding lists' methods
 def example_list_methods():
     new_list = lm.List()
     new_list.add_nodes(*[1, 2, 3])
@@ -23,7 +25,7 @@ def example_insert_sort_of_lists():
     lf.iterate(new)
 
 
-#implement bidirectional methods
+# implement bidirectional methods
 def example_bidirect_lists():
     bidir_list = bl.BiList(None)
     list_of_values = [1, 3, 5, 2, 8, 4]
@@ -42,7 +44,7 @@ def example_copy_of_list():
     lf.iterate(new)
 
 
-#implement working with lists with loops. Marking
+# implement working with lists with loops. Marking
 def example_marking():
     sentinel = ll.Cellv(None)
     list_of_values = [1, 2, 3, 4, 5]
@@ -51,7 +53,7 @@ def example_marking():
     ll.has_loop_marking(sentinel)
 
 
-#implement working with loops. Retracing
+# implement working with loops. Retracing
 def example_retracing():
     sentinel = ll.Cell(None)
     list_of_values = [1, 2, 3, 4, 5]
@@ -64,7 +66,7 @@ def example_retracing():
     ll.iterate(sentinel)
 
 
-#implement working with loop. Reverse
+# implement working with loop. Reverse
 def example_reverse():
     sentinel = ll.Cell(None)
     list_of_values = [1, 2, 3, 4, 5]
@@ -77,7 +79,7 @@ def example_reverse():
     print(has_loop)
 
 
-#implemet working with loop. Floid Algorithm
+# implemet working with loop. Floid Algorithm
 def example_floid():
     sentinel = ll.Cell(None)
     list_of_values = [1, 2, 3, 4, 5, 6, 7]
@@ -88,12 +90,12 @@ def example_floid():
     ll.iterate(sentinel)
 
 
-#release a lists' functions
-#release by sentinel and working with one
+# release a lists' functions
+# release by sentinel and working with one
 def example_lists_func():
     sentinel = lf.Cell(None)
     list_of_cells = []
-    #filling out the list
+    # filling out the list
     for i in range(0, 10):
         list_of_cells.append(lf.Cell(i))
     for i in range(0, 5):
@@ -103,7 +105,7 @@ def example_lists_func():
     lf.iterate(sentinel)
 
 
-#exmple of releasing loops' methods
+# example of releasing loops' methods
 def loops():
     print("""You can choose one of below methods of finding loops in cycles:
     1 Retracing
@@ -145,3 +147,7 @@ def menu_of_lists():
             print("Fuck off")
         else:
             break
+
+
+new_menu = inter.Example()
+new_menu.mainloop()

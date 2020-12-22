@@ -76,7 +76,12 @@ class List:
             string += str(top.value) + ', '
         string += str(top.next.value) + '] << End'
         return string
-    
+
+    def generator_print(self):
+        top = self.pointer
+        while top.next is not None:
+            top = top.next
+            yield top.value
 
 if __name__ == "main":
     new = List()
