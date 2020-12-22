@@ -1,8 +1,10 @@
+import random as rd
+
+
 class Node:
-    def __init__(self, value, inc=-1, next=None):
+    def __init__(self, value, next=None):
         self.value = value
         self.next = next
-        self.ind = inc
 
     def __str__(self):
         return str(self.ind)
@@ -14,11 +16,9 @@ class List:
 
     def add_node(self, value):
         top = self.pointer
-        inc = 0
         while top.next is not None:
             top = top.next
-            inc += 1
-        new_node = Node(value, inc)
+        new_node = Node(value)
         top.next = new_node
 
     def add_nodes(self, *values):
@@ -27,32 +27,30 @@ class List:
 
     def add_to_head(self, value):
         top = self.pointer
-        new = Node(value)
+        new_cell = Node(value)
         new.next = top.next
-        top.next = new
-        while top.next is not None:
-            top = top.next
-            top.ind += 1
+        top.next = new_cell
 
     def find_node(self, value):
         top = self.pointer
+        inc = 0
         while top.next is not None:
             top = top.next
+            inc += 1
             if top.value == value:
-                return top.ind
+                return inc
         return None
 
     def insert_node(self, after_me, value):
         top = self.pointer
+        inc = 0
         while top.next is not None:
             top = top.next
-            if top.ind == after_me:
-                new = Node(value, top.ind)
+            inc += 1
+            if inc == after_me:
+                new = Node(value)
                 new.next = top.next
                 top.next = new
-                while top.next is not None:
-                    top = top.next
-                    top.ind += 1
 
     def delete_node(self, index):
         top = self.pointer
@@ -82,6 +80,17 @@ class List:
         while top.next is not None:
             top = top.next
             yield top.value
+
+    def random_list(self):
+        sentinel = self.pointer
+        n = rd.randint(1, 10)
+        for i in range(n):
+            elem = rd.randint(1, 30)
+            sentinel.next = Node(elem)
+            sentinel = sentinel.next
+
+
+
 
 if __name__ == "main":
     new = List()
