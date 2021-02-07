@@ -1,5 +1,4 @@
 import numpy as np
-import colorama
 from colorama import Fore, Style
 
 
@@ -29,9 +28,9 @@ class SoLowCountException(MyErrors):
 
 # обрабочик функций на ошибки
 def handle_error(func):
-    def wrapper(array, l):
+    def wrapper(array, *args):
         try:
-            func(array, l)
+            func(array, *args)
         except MyErrors as err:
             print( Fore.YELLOW + "Occurred exception:", err.data, Style.RESET_ALL, sep=" ", end="\n")
     return wrapper
